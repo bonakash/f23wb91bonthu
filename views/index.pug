@@ -4,5 +4,15 @@ block content
   h1= title
   p Welcome to #{title}
   p This is a message as part of assignment.
-  div 
-   button(type="button", class="btn btn-info") Press me for contents 
+  button(type="button", class="btn btn-info", onclick="goFaster()") Press me for contents 
+  div#faster  Increase the speed
+  script.
+    var mph = 20;
+    var change = 1;
+
+    function goFaster() {
+      mph += change;
+      change++;
+      var fasterDiv = document.getElementById("faster");
+      fasterDiv.textContent = "MPH" + mph + " with change " + change;
+    }
